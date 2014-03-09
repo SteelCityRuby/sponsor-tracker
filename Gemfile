@@ -13,6 +13,8 @@ group :production do
   gem 'puma'
 end
 
+gem 'browserid-auth-rails'
+
 gem 'haml-rails'
 gem 'bootstrap-sass'
 gem 'simple_form'

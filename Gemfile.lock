@@ -34,6 +34,9 @@ GEM
       erubis (>= 2.6.6)
     bootstrap-sass (3.1.1.0)
       sass (~> 3.2)
+    browserid-auth-rails (0.5.5)
+      jquery-rails
+      railties (>= 3.2)
     builder (3.2.2)
     coderay (1.1.0)
     coffee-rails (4.0.1)
@@ -139,6 +142,7 @@ PLATFORMS
 DEPENDENCIES
   better_errors
   bootstrap-sass
+  browserid-auth-rails
   coffee-rails (~> 4.0.0)
   haml-rails
   jbuilder (~> 2.0)
