@@ -1,2 +1,15 @@
-%h1 Welcome#index
-%p Find me in app/views/welcome/index.html.haml
+%h1 Welcome
+- if browserid_email
+  %h2 Persona
+  %p You are currently logged in via Persona
+  %p Address: #{browserid_email}
+
+%h2 Account
+- if browserid_authenticated?
+  %p Your user account is active
+- else
+  - if browserid_email
+    %p Your email address is not active
+    %p Contact the site owner for access
+  - else
+    %p You are not logged in
