@@ -2,18 +2,17 @@
 %html
   %head
     %meta{:charset => "utf-8"}
+    %meta{:name => "viewport", :content => "width=device-width, initial-scale=1, maximum-scale=1"}
     %title Sponsor Tracker
     = stylesheet_link_tag "application", media: "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
     = setup_browserid
-  %body
-    %ul#menu
-      -if browserid_email
-        %li.pull-right= logout_link
-      -else
-        %li.pull-right= login_link
-    #sys-message-flash
-      %p.notice= notice
-      %p.alert= alert
-    = yield
+  %body{:class => "#{controller_name} #{action_name}"}
+    %nav.navbar.navbar-default{role: 'navigation'}
+      = render 'layouts/navigation'
+    #section-main.container{:role => "main"}
+      .row
+        .col-md-12
+          = render 'layouts/messages'
+          = yield

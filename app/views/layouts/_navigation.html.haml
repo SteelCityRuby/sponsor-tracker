@@ -1,0 +1,15 @@
+.navbar-header
+  %button.navbar-toggle(type="button" data-toggle="collapse" data-target="#navbar-collapse-root")
+    %span.sr-only Toggle navigation
+    %span.icon-bar
+    %span.icon-bar
+    %span.icon-bar
+  = link_to root_path, :class => 'navbar-brand' do
+    = "Sponsor Tracker"
+#navbar-collapse-root.collapse.navbar-collapse
+  %ul.nav.navbar-nav.pull-right
+    -if browserid_email
+      %li= logout_link
+    -else
+      %li= login_link
+
