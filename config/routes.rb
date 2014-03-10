@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :sponsors
+
   post 'login' => 'sessions#create'
   post 'logout' => 'sessions#destroy'
 

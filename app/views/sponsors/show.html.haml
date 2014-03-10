@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @sponsor.name
+%p
+  %b State:
+  = @sponsor.state
+
+= link_to 'Edit', edit_sponsor_path(@sponsor)
+\|
+= link_to 'Back', sponsors_path
