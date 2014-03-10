@@ -4,7 +4,11 @@ class SponsorsController < ApplicationController
   # GET /sponsors
   # GET /sponsors.json
   def index
-    @sponsors = Sponsor.all
+    if params[:state]
+      @sponsors = Sponsor.where state: params[:state]
+    else
+      @sponsors = Sponsor.all
+    end
   end
 
   # GET /sponsors/1

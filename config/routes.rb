@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :sponsors
 
+  get 'sponsors/state/:state' => 'sponsors#index'
+
   post 'login' => 'sessions#create'
   post 'logout' => 'sessions#destroy'
 
