@@ -16,6 +16,7 @@ group :production do
 end
 
 gem 'browserid-auth-rails'
+gem 'state_machine'
 
 gem 'haml-rails'
 gem 'bootstrap-sass'
