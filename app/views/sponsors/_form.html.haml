@@ -1,13 +1,9 @@
-= form_for @sponsor do |f|
-  - if @sponsor.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@sponsor.errors.count, "error")} prohibited this sponsor from being saved:"
-      %ul
-        - @sponsor.errors.full_messages.each do |msg|
-          %li= msg
+= simple_form_for @sponsor do |f|
+  = f.error_notification
 
-  .field
-    = f.label :name
-    = f.text_field :name
-  .actions
-    = f.submit 'Save'
+  .form-inputs
+    = f.input :name
+    = f.input :note
+
+  .form-actions
+    = f.button :submit
