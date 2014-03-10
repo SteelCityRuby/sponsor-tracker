@@ -7,6 +7,9 @@
   = link_to root_path, :class => 'navbar-brand' do
     = "Sponsor Tracker"
 #navbar-collapse-root.collapse.navbar-collapse
+  %ul.nav.navbar-nav
+    - if browserid_authenticated?
+      %li= link_to "Sponspors", sponsors_url
   %ul.nav.navbar-nav.pull-right
     -if browserid_email
       %li= logout_link
