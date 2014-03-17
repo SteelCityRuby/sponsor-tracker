@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :package_types
+
   resources :sponsors
 
   get 'sponsors/state/:state' => 'sponsors#index'

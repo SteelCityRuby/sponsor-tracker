@@ -1,0 +1,21 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @package_type.name
+%p
+  %b Price:
+  = @package_type.price
+%p
+  %b Addons allowed:
+  = @package_type.addons_allowed
+%p
+  %b Tickets:
+  = @package_type.tickets
+%p
+  %b Total spots:
+  = @package_type.total_spots
+
+= link_to 'Edit', edit_package_type_path(@package_type)
+\|
+= link_to 'Back', package_types_path
