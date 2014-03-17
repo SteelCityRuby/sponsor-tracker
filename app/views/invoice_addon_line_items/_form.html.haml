@@ -1,0 +1,10 @@
+= simple_form_for(@invoice_addon_line_item) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.association :invoice
+    = f.association :package_addon_type
+    = f.input :quantity
+
+  .form-actions
+    = f.button :submit

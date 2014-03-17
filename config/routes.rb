@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :invoice_addon_line_items
+
   resources :invoices
 
   resources :package_addon_types
