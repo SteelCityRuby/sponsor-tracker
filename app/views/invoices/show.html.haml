@@ -2,11 +2,12 @@
 
 %p
   %b Sponsor:
-  = @invoice.sponsor
+  = @invoice.sponsor.name
 %p
   %b Package type:
-  = @invoice.package_type
+  = @invoice.package_type.name
+%p
+  %b Total:
+  = @invoice.total
 
-= link_to 'Edit', edit_invoice_path(@invoice)
-\|
-= link_to 'Back', invoices_path
+%a.btn.btn-default{href: edit_invoice_path(@invoice)} Edit

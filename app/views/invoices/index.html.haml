@@ -1,21 +1,21 @@
 %h1 Listing invoices
 
-%table
+%table.table.table-striped
   %tr
     %th Sponsor
     %th Package type
-    %th
+    %th Total
     %th
     %th
 
   - @invoices.each do |invoice|
     %tr
-      %td= invoice.sponsor
-      %td= invoice.package_type
+      %td= invoice.sponsor.name
+      %td= invoice.package_type.name
+      %td= invoice.total
       %td= link_to 'Show', invoice
       %td= link_to 'Edit', edit_invoice_path(invoice)
-      %td= link_to 'Destroy', invoice, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 
-= link_to 'New Invoice', new_invoice_path
+%a.btn.btn-primary{href: new_invoice_path} New Invoice
