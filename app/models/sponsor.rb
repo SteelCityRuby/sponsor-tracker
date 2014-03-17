@@ -4,19 +4,23 @@ class Sponsor < ActiveRecord::Base
 
   state_machine :initial => :prospect do
     event :pledge do
-      transition :prospect => :pledged
+      transition :prospect => :invoiced
     end
 
-    event :receive_payment do
-      transition :pledged => :payment_processing
+    event :receive_check do
+      transition :invoiced => :payment_processing
     end
 
-    event :reconsile do
-      transition :payment_processing => :payment_cleared
+    event :deposit_check do
+      transition :payment_processing => :payment_received
+    end
+
+    event :swipe_credit_card do
+      transition :invoiced => :payment_received
     end
 
     event :upload_assets do
-      transition :payment_cleared => :assets_uploaded
+      transition :payment_received => :assets_uploaded
     end
   end
 end
