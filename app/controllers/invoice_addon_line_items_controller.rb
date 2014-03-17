@@ -14,7 +14,7 @@ class InvoiceAddonLineItemsController < ApplicationController
 
   # GET /invoice_addon_line_items/new
   def new
-    @invoice_addon_line_item = InvoiceAddonLineItem.new
+    @invoice_addon_line_item = InvoiceAddonLineItem.new(invoice_id: params[:invoice_id])
   end
 
   # GET /invoice_addon_line_items/1/edit
