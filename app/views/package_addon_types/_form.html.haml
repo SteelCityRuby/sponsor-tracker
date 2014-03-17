@@ -1,0 +1,10 @@
+= simple_form_for(@package_addon_type) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.input :name
+    = f.input :price
+    = f.input :total_spots
+
+  .form-actions
+    = f.button :submit

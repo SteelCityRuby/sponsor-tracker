@@ -1,0 +1,23 @@
+%h1 Listing package_addon_types
+
+%table
+  %tr
+    %th Name
+    %th Price
+    %th Total spots
+    %th
+    %th
+    %th
+
+  - @package_addon_types.each do |package_addon_type|
+    %tr
+      %td= package_addon_type.name
+      %td= package_addon_type.price
+      %td= package_addon_type.total_spots
+      %td= link_to 'Show', package_addon_type
+      %td= link_to 'Edit', edit_package_addon_type_path(package_addon_type)
+      %td= link_to 'Destroy', package_addon_type, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Package addon type', new_package_addon_type_path

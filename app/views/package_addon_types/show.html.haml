@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @package_addon_type.name
+%p
+  %b Price:
+  = @package_addon_type.price
+%p
+  %b Total spots:
+  = @package_addon_type.total_spots
+
+= link_to 'Edit', edit_package_addon_type_path(@package_addon_type)
+\|
+= link_to 'Back', package_addon_types_path
