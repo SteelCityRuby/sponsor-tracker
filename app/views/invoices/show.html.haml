@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Sponsor:
+  = @invoice.sponsor
+%p
+  %b Package type:
+  = @invoice.package_type
+
+= link_to 'Edit', edit_invoice_path(@invoice)
+\|
+= link_to 'Back', invoices_path

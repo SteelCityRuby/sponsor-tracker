@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140317195703) do
+ActiveRecord::Schema.define(version: 20140317205024) do
+
+  create_table "invoices", force: true do |t|
+    t.integer  "sponsor_id"
+    t.integer  "package_type_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "invoices", ["package_type_id"], name: "index_invoices_on_package_type_id"
+  add_index "invoices", ["sponsor_id"], name: "index_invoices_on_sponsor_id"
 
   create_table "package_addon_types", force: true do |t|
     t.string   "name"

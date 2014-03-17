@@ -1,0 +1,9 @@
+= simple_form_for(@invoice) do |f|
+  = f.error_notification
+
+  .form-inputs
+    = f.association :sponsor
+    = f.association :package_type
+
+  .form-actions
+    = f.button :submit

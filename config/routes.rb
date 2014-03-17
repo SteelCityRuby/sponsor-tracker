@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :invoices
+
   resources :package_addon_types
 
   resources :package_types

@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sponsor_id: 
+  package_type_id: 
+
+two:
+  sponsor_id: 
+  package_type_id: 
