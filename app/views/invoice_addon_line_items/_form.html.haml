@@ -2,7 +2,7 @@
   = f.error_notification
 
   .form-inputs
-    = f.association :invoice, disabled: true
+    = f.association :invoice, readonly: true, as: :string
     = f.association :package_addon_type
     = f.input :quantity
 
