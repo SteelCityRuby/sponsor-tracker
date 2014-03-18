@@ -1,7 +1,7 @@
 %p#notice= notice
 
 %h1.page-header Invoice #{@invoice.name}
-%a.pull-right.btn.btn-success.disabled Print
+%a.pull-right.btn.btn-success{href: invoice_print_url(@invoice) } Print
 
 %h2 Overview
 

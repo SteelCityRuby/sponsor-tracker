@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :invoice_addon_line_items
 
   resources :invoices
+  get 'invoices/:id/print' => 'invoices#print', as: 'invoice_print'
 
   resources :package_addon_types
 

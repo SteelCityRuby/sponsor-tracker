@@ -1,0 +1,65 @@
+%header
+  %h1 Invoice
+  %h2 Steel City Ruby Conference 2014 Sponsorship
+%article
+  %address
+    = @invoice.sponsor.name
+    %br
+    c/o SOMEONE
+  %table.meta
+    %tr
+      %th Invoice #
+      %td= @invoice.name
+    %tr
+      %th Date
+      %td= Time.now.to_date
+    %tr
+      %th Amount Due
+      %td $#{@invoice.total}.00
+
+  %table.items
+    %thead
+      %tr
+        %th Item
+        %th Rate
+        %th Quantity
+        %th Price
+    %tbody
+      %tr
+        %td Base package: #{@invoice.package_type.name}
+        %td $#{@invoice.package_type.price}.00
+        %td 1
+        %td $#{@invoice.package_type.price}.00
+      - @invoice.invoice_addon_line_items.each do |line_item|
+        %tr
+          %td= line_item.package_addon_type.name
+          %td $#{line_item.package_addon_type.price}.00
+          %td= line_item.quantity
+          %td $#{line_item.price}.00
+
+  %table.balance
+    %tr
+      %th Total
+      %td $#{@invoice.total}.00
+    %tr
+      %th Amount Paid
+      %td $0.00
+    %tr
+      %th Balance Due
+      %td $#{@invoice.total}.00
+
+%aside
+  %h1 Please remit payment to
+  .info
+    %address
+      %p Steel City Ruby Conference
+      %p Attn: ..., Treasurer
+      %p Address line 1
+      %p Address line 2
+    %br
+    %p
+      Make checks payable to
+      %strong Steel City Ruby Conference, LLC
+      and include
+      %strong SCRC14
+      in the memo

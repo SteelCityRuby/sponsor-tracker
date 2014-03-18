@@ -1,5 +1,5 @@
 class InvoicesController < ApplicationController
-  before_action :set_invoice, only: [:show, :edit, :update, :destroy]
+  before_action :set_invoice, only: [:show, :edit, :update, :destroy, :print]
 
   # GET /invoices
   # GET /invoices.json
@@ -10,6 +10,10 @@ class InvoicesController < ApplicationController
   # GET /invoices/1
   # GET /invoices/1.json
   def show
+  end
+
+  def print
+    render 'print', layout: 'print-invoice'
   end
 
   # GET /invoices/new
