@@ -1,4 +1,6 @@
 class Sponsor < ActiveRecord::Base
+  has_one :invoice
+
   validates_presence_of :name
   validates_length_of :name, within: 5..40
 
