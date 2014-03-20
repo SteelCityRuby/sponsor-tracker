@@ -6,15 +6,13 @@
     %th Sponsor
     %th Package type
     %th Total
-    %th
 
   - @invoices.each do |invoice|
     %tr
       %td= link_to invoice.name, invoice
       %td= link_to invoice.sponsor.name, invoice.sponsor
-      %td= invoice.package_type.name
+      %td= link_to invoice.package_type.name, invoice.package_type
       %td= invoice.total
-      %td= link_to 'Edit', edit_invoice_path(invoice)
 
 %br
 

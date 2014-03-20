@@ -1,5 +1,3 @@
-%p#notice= notice
-
 %h1.page-header Invoice #{@invoice.name}
 %a.pull-right.btn.btn-success{href: invoice_print_url(@invoice) } Print
 
@@ -15,7 +13,7 @@
   %b Total:
   = @invoice.total
 
-%a.btn.btn-default{href: edit_invoice_path(@invoice)} Edit
+%a.btn.btn-default{href: edit_invoice_path(@invoice)} Edit base package
 
 %h2 Addons
 
@@ -26,12 +24,14 @@
       %th Price
       %th Qty
       %th Subtotal
+      %th
     - @invoice.invoice_addon_line_items.each do |line_item|
       %tr
-        %td= link_to line_item.package_addon_type.name, line_item
+        %td= line_item.package_addon_type.name
         %td= line_item.package_addon_type.price
         %td= line_item.quantity
         %td= line_item.price
+        %td= link_to 'Edit', edit_invoice_addon_line_item_url(line_item)
   %a.btn.btn-primary{href: new_invoice_addon_line_item_url(invoice_id: @invoice.id)} Add addon
 - else
   Addons not allowed with the selected package type

@@ -2,6 +2,4 @@
 
 = render 'form'
 
-= link_to 'Show', @package_addon_type
-\|
-= link_to 'Back', package_addon_types_path
+%a.btn.btn-default{href: url_for(@package_addon_type) } Cancel

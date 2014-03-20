@@ -8,20 +8,16 @@
     %th Addons allowed
     %th Tickets
     %th Total spots
-    %th
-    %th
 
   - @package_types.each do |package_type|
     %tr
-      %td= package_type.name
+      %td= link_to package_type.name, package_type
       %td= package_type.price
       %td= package_type.remaining
       %td= package_type.addons_allowed
       %td= package_type.tickets
       %td= package_type.total_spots
-      %td= link_to 'Show', package_type
-      %td= link_to 'Edit', edit_package_type_path(package_type)
 
 %br
 
-= link_to 'New Package type', new_package_type_path
+%a.btn.btn-primary{href: new_package_type_path} New Package type

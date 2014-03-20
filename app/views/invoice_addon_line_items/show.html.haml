@@ -1,15 +1,11 @@
-%p#notice= notice
-
 %p
   %b Invoice:
-  = @invoice_addon_line_item.invoice
+  = link_to @invoice_addon_line_item.invoice.name, @invoice_addon_line_item.invoice
 %p
   %b Package addon type:
-  = @invoice_addon_line_item.package_addon_type
+  = link_to @invoice_addon_line_item.package_addon_type.name, @invoice_addon_line_item.package_addon_type
 %p
   %b Quantity:
   = @invoice_addon_line_item.quantity
 
-= link_to 'Edit', edit_invoice_addon_line_item_path(@invoice_addon_line_item)
-\|
-= link_to 'Back', invoice_addon_line_items_path
+%a.btn.btn-default{href: edit_invoice_addon_line_item_path(@invoice_addon_line_item)} Edit
