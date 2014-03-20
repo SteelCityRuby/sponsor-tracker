@@ -18,7 +18,7 @@ class InvoicesController < ApplicationController
 
   # GET /invoices/new
   def new
-    @invoice = Invoice.new
+    @invoice = Invoice.new sponsor: Sponsor.find_by_id(params[:sponsor_id])
   end
 
   # GET /invoices/1/edit

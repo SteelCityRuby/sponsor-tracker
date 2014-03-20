@@ -11,4 +11,10 @@
   %b Note:
   = @sponsor.note
 
+-if @sponsor.invoice
+  %p
+    %b Invoice:
+    = link_to @sponsor.invoice.name, @sponsor.invoice
+- else
+  %a.btn.btn-primary{href: new_invoice_url(sponsor_id: @sponsor.id)} Create Invoice
 %a.btn.btn-default{href: edit_sponsor_path(@sponsor)} Edit
