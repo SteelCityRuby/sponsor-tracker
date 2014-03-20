@@ -28,7 +28,7 @@ class InvoiceAddonLineItemsController < ApplicationController
 
     respond_to do |format|
       if @invoice_addon_line_item.save
-        format.html { redirect_to @invoice_addon_line_item, notice: 'Invoice addon line item was successfully created.' }
+        format.html { redirect_to @invoice_addon_line_item.invoice, notice: 'Invoice addon line item was successfully created.' }
         format.json { render action: 'show', status: :created, location: @invoice_addon_line_item }
       else
         format.html { render action: 'new' }
@@ -42,7 +42,7 @@ class InvoiceAddonLineItemsController < ApplicationController
   def update
     respond_to do |format|
       if @invoice_addon_line_item.update(invoice_addon_line_item_params)
-        format.html { redirect_to @invoice_addon_line_item, notice: 'Invoice addon line item was successfully updated.' }
+        format.html { redirect_to @invoice_addon_line_item.invoice, notice: 'Invoice addon line item was successfully updated.' }
         format.json { render action: 'show', status: :ok, location: @invoice_addon_line_item }
       else
         format.html { render action: 'edit' }
