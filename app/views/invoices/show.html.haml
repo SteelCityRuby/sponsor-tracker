@@ -11,7 +11,7 @@
   = @invoice.package_type.name
 %p
   %b Total:
-  = @invoice.total
+  = number_to_currency @invoice.total
 
 %a.btn.btn-default{href: edit_invoice_path(@invoice)} Edit base package
 
@@ -30,7 +30,7 @@
         %td= line_item.package_addon_type.name
         %td= line_item.package_addon_type.price
         %td= line_item.quantity
-        %td= line_item.price
+        %td= number_to_currency line_item.price
         %td= link_to 'Edit', edit_invoice_addon_line_item_url(line_item)
   %a.btn.btn-primary{href: new_invoice_addon_line_item_url(invoice_id: @invoice.id)} Add addon
 - else

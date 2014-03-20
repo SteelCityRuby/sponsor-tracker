@@ -3,7 +3,7 @@
   = @package_addon_type.name
 %p
   %b Price:
-  = @package_addon_type.price
+  = number_to_currency @package_addon_type.price
 %p
   %b Spots remaining:
   = @package_addon_type.remaining

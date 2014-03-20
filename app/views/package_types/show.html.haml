@@ -3,7 +3,7 @@
   = @package_type.name
 %p
   %b Price:
-  = @package_type.price
+  = number_to_currency @package_type.price
 %p
   %b Addons allowed:
   = @package_type.addons_allowed
