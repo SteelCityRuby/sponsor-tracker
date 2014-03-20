@@ -55,6 +55,7 @@ article, article address, table.meta, table.items { margin: 0 0 3em; }
 article:after { clear: both; content: ""; display: table; }
 
 article address { float: left; font-size: 125%; font-weight: bold; }
+article address pre {font-weight: normal; }
 
 /* table meta & balance */
 

@@ -5,7 +5,7 @@
   %address
     = @invoice.sponsor.name
     %br
-    c/o SOMEONE
+    = content_tag 'pre', @invoice.sponsor.address
   %table.meta
     %tr
       %th Invoice #
