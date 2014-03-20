@@ -11,9 +11,11 @@
     - if browserid_authenticated?
       %li= link_to "Sponspors", sponsors_url
       %li= link_to "Invoices", invoices_url
-      %li= link_to "Line Items", invoice_addon_line_items_url
-      %li= link_to "Package Types", package_types_url
-      %li= link_to "Package Addon Types", package_addon_types_url
+      %li.dropdown
+        %a.dropdown-toggle(href="#" data-toggle="dropdown")Admin <b class="caret"></b>
+        %ul.dropdown-menu
+          %li= link_to "Package Types", package_types_url
+          %li= link_to "Package Addon Types", package_addon_types_url
   %ul.nav.navbar-nav.pull-right
     -if browserid_email
       %li= logout_link
