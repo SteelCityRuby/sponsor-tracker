@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140317210310) do
+ActiveRecord::Schema.define(version: 20140320010850) do
 
   create_table "invoice_addon_line_items", force: true do |t|
     t.integer  "invoice_id"
@@ -64,6 +64,7 @@ ActiveRecord::Schema.define(version: 20140317210310) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.text     "note"
+    t.text     "address"
   end
 
   create_table "users", force: true do |t|
