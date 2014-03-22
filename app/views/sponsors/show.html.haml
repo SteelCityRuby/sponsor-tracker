@@ -1,7 +1,9 @@
 %h1.page-header Sponsor: #{@sponsor.name}
 
 - unless @sponsor.invoice
-  %a.btn.btn-primary.pull-right{href: new_invoice_url(sponsor_id: @sponsor.id)} Create Invoice
+  %a.btn.btn-primary.pull-right{href: new_invoice_url(sponsor_id: @sponsor.id)}
+    %span.glyphicon.glyphicon-file
+    Create Invoice
 
 %dl.dl-horizontal
   %dt State:

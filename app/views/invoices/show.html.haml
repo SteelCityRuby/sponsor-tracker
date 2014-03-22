@@ -1,6 +1,8 @@
 %h1.page-header Invoice: #{@invoice.name}
 
-%a.pull-right.btn.btn-success{href: invoice_print_url(@invoice) } Print
+%a.pull-right.btn.btn-success{href: invoice_print_url(@invoice) }
+  %span.glyphicon.glyphicon-print
+  Print
 
 %h2 Overview
 
@@ -31,6 +33,8 @@
         %td= line_item.quantity
         %td= number_to_currency line_item.price
         %td= link_to 'Edit', edit_invoice_addon_line_item_url(line_item)
-  %a.btn.btn-primary{href: new_invoice_addon_line_item_url(invoice_id: @invoice.id)} Add addon
+  %a.btn.btn-primary{href: new_invoice_addon_line_item_url(invoice_id: @invoice.id)}
+    %span.glyphicon.glyphicon-plus
+    Add addon
 - else
   Addons not allowed with the selected package type
