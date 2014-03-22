@@ -2,6 +2,7 @@ class Invoice < ActiveRecord::Base
   belongs_to :sponsor
   belongs_to :package_type
   has_many :invoice_addon_line_items
+  has_many :payments
 
   validates_presence_of :sponsor, :package_type
   validates_uniqueness_of :sponsor
@@ -16,5 +17,9 @@ class Invoice < ActiveRecord::Base
 
   def name
     "2014-SCRC-#{id}"
+  end
+
+  def balance
+    total - payments.sum(:ammount)
   end
 end

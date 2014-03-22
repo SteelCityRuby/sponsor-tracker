@@ -14,7 +14,7 @@ class PaymentsController < ApplicationController
 
   # GET /payments/new
   def new
-    @payment = Payment.new
+    @payment = Payment.new invoice: Invoice.find_by_id(params[:invoice_id])
   end
 
   # GET /payments/1/edit
@@ -25,6 +25,7 @@ class PaymentsController < ApplicationController
   # POST /payments.json
   def create
     @payment = Payment.new(payment_params)
+    @payment.created_by = browserid_current_user
 
     respond_to do |format|
       if @payment.save

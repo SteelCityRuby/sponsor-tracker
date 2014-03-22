@@ -8,7 +8,7 @@
 
 %dl.dl-horizontal
   %dt Sponsor:
-  %dd= @invoice.sponsor.name
+  %dd= link_to @invoice.sponsor.name, @invoice.sponsor
   %dt Package type:
   %dd= @invoice.package_type.name
   %dt Total:

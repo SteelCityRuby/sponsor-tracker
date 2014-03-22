@@ -5,9 +5,14 @@
     %span.glyphicon.glyphicon-file
     Create Invoice
 
+-if @sponsor.invoice && @sponsor.invoice.balance > 0
+  %a.btn.btn-primary.pull-right{href: new_payment_url(invoice_id: @sponsor.invoice.id)}
+    %span.glyphicon.glyphicon-file
+    Add Payment
+
 %dl.dl-horizontal
-  %dt State:
-  %dd= @sponsor.state
+  %dt Balance:
+  %dd= @sponsor.balance
   %dt Address:
   %dd= @sponsor.address
   %dt Note:

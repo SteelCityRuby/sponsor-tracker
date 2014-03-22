@@ -1,13 +1,13 @@
-%h1.page-header payment: #{@payment}
+%h1.page-header Payment: #{@payment.invoice.sponsor.name} (#{@payment.invoice.name})
 
 %dl.dl-horizontal
   %dt Invoice:
-  %dd= @payment.invoice
+  %dd= link_to @payment.invoice.name, @payment.invoice
   %dt Payment type:
-  %dd= @payment.payment_type
+  %dd= @payment.payment_type.name
   %dt Ammount:
-  %dd= @payment.ammount
+  %dd= number_to_currency @payment.ammount
   %dt Created by:
-  %dd= @payment.created_by
+  %dd= @payment.created_by.email
 
 %a.btn.btn-default{href: edit_payment_path(@payment)} Edit

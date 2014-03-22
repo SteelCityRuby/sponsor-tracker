@@ -6,6 +6,7 @@
     %th Sponsor
     %th Package type
     %th Total
+    %th Balance
 
   - @invoices.each do |invoice|
     %tr
@@ -13,6 +14,7 @@
       %td= link_to invoice.sponsor.name, invoice.sponsor
       %td= link_to invoice.package_type.name, invoice.package_type
       %td= number_to_currency invoice.total
+      %td= number_to_currency invoice.balance
 
 %br
 

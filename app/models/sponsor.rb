@@ -25,4 +25,8 @@ class Sponsor < ActiveRecord::Base
       transition :payment_received => :assets_uploaded
     end
   end
+
+  def balance
+    invoice.balance if invoice
+  end
 end

@@ -6,21 +6,17 @@
       %th Invoice
       %th Payment type
       %th Ammount
-      %th Created by
-      %th
       %th
       %th
 
   %tbody
     - @payments.each do |payment|
       %tr
-        %td= payment.invoice
-        %td= payment.payment_type
-        %td= payment.ammount
-        %td= payment.created_by
+        %td= link_to payment.invoice.name, payment.invoice
+        %td= payment.payment_type.name
+        %td= number_to_currency payment.ammount
         %td= link_to 'Show', payment
         %td= link_to 'Edit', edit_payment_path(payment)
-        %td= link_to 'Destroy', payment, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 
