@@ -1,0 +1,9 @@
+%h1.page-header <%= singular_table_name %>: #{@<%= singular_table_name%>}
+
+%dl.dl-horizontal
+<% for attribute in attributes -%>
+  %dt <%= attribute.human_name %>:
+  %dd= @<%= singular_table_name %>.<%= attribute.name %>
+<% end -%>
+
+%a.btn.btn-default{href: edit_<%= singular_table_name %>_path(@<%= singular_table_name %>)} Edit
