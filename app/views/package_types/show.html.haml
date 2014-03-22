@@ -5,6 +5,9 @@
   %b Price:
   = number_to_currency @package_type.price
 %p
+  %b Spots remaining:
+  = @package_type.remaining
+%p
   %b Addons allowed:
   = @package_type.addons_allowed
 %p
@@ -15,3 +18,13 @@
   = @package_type.total_spots
 
 %a.btn.btn-default{href: edit_package_type_path(@package_type)} Edit
+
+
+%h2 Allocated spots
+
+%table.table.table-striped
+  %tr
+    %th Sponsor
+  - @package_type.invoices.each do |invoice|
+    %tr
+      %td= link_to invoice.sponsor.name, invoice.sponsor
