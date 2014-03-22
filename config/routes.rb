@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :payments
+
   resources :invoice_addon_line_items
 
   resources :invoices

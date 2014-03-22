@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  invoice_id: 
+  payment_type_id: 
+  ammount: 1
+  created_by_id: 
+
+two:
+  invoice_id: 
+  payment_type_id: 
+  ammount: 1
+  created_by_id: 

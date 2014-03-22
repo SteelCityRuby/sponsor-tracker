@@ -1,0 +1,13 @@
+%h1.page-header payment: #{@payment}
+
+%dl.dl-horizontal
+  %dt Invoice:
+  %dd= @payment.invoice
+  %dt Payment type:
+  %dd= @payment.payment_type
+  %dt Ammount:
+  %dd= @payment.ammount
+  %dt Created by:
+  %dd= @payment.created_by
+
+%a.btn.btn-default{href: edit_payment_path(@payment)} Edit

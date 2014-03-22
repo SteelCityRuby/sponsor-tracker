@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140320010850) do
+ActiveRecord::Schema.define(version: 20140322020036) do
 
   create_table "invoice_addon_line_items", force: true do |t|
     t.integer  "invoice_id"
@@ -57,6 +57,19 @@ ActiveRecord::Schema.define(version: 20140320010850) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "payments", force: true do |t|
+    t.integer  "invoice_id"
+    t.integer  "payment_type_id"
+    t.integer  "ammount"
+    t.integer  "created_by_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "payments", ["created_by_id"], name: "index_payments_on_created_by_id"
+  add_index "payments", ["invoice_id"], name: "index_payments_on_invoice_id"
+  add_index "payments", ["payment_type_id"], name: "index_payments_on_payment_type_id"
 
   create_table "sponsors", force: true do |t|
     t.string   "name"
