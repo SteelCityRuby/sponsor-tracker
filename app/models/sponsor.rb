@@ -1,8 +1,7 @@
 class Sponsor < ActiveRecord::Base
   has_one :invoice
 
-  validates_presence_of :name
-  validates_length_of :name, within: 5..40
+  validates :name, presence: true, length: {within: 5..40}
 
   state_machine :initial => :prospect do
     event :pledge do

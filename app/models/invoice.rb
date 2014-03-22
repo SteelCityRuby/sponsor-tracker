@@ -4,8 +4,8 @@ class Invoice < ActiveRecord::Base
   has_many :invoice_addon_line_items
   has_many :payments
 
-  validates_presence_of :sponsor, :package_type
-  validates_uniqueness_of :sponsor
+  validates :package_type, presence: true
+  validates :sponsor, presence: true, uniqueness: true
 
   def total
     package_type.price + (invoice_addon_line_items.map &:price).sum
