@@ -1,17 +1,16 @@
-%h1.page-header Invoice #{@invoice.name}
+%h1.page-header Invoice: #{@invoice.name}
+
 %a.pull-right.btn.btn-success{href: invoice_print_url(@invoice) } Print
 
 %h2 Overview
 
-%p
-  %b Sponsor:
-  = @invoice.sponsor.name
-%p
-  %b Package type:
-  = @invoice.package_type.name
-%p
-  %b Total:
-  = number_to_currency @invoice.total
+%dl.dl-horizontal
+  %dt Sponsor:
+  %dd= @invoice.sponsor.name
+  %dt Package type:
+  %dd= @invoice.package_type.name
+  %dt Total:
+  %dd= number_to_currency @invoice.total
 
 %a.btn.btn-default{href: edit_invoice_path(@invoice)} Edit base package
 

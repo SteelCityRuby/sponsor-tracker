@@ -1,15 +1,12 @@
-%p
-  %b Name:
-  = @package_addon_type.name
-%p
-  %b Price:
-  = number_to_currency @package_addon_type.price
-%p
-  %b Spots remaining:
-  = @package_addon_type.remaining
-%p
-  %b Total spots:
-  = @package_addon_type.total_spots
+%h1.page-header Package addon: #{@package_addon_type.name}
+
+%dl.dl-horizontal
+  %dt Price:
+  %dd= number_to_currency @package_addon_type.price
+  %dt Spots remaining:
+  %dd= @package_addon_type.remaining
+  %dt Total spots:
+  %dd= @package_addon_type.total_spots
 
 %a.btn.btn-default{href: edit_package_addon_type_path(@package_addon_type)} Edit
 

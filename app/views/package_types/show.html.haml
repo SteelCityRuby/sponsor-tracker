@@ -1,24 +1,18 @@
-%p
-  %b Name:
-  = @package_type.name
-%p
-  %b Price:
-  = number_to_currency @package_type.price
-%p
-  %b Spots remaining:
-  = @package_type.remaining
-%p
-  %b Addons allowed:
-  = @package_type.addons_allowed
-%p
-  %b Tickets:
-  = @package_type.tickets
-%p
-  %b Total spots:
-  = @package_type.total_spots
+%h1.page-header Package Type: #{@package_type.name}
+
+%dl.dl-horizontal
+  %dt Price:
+  %dd= number_to_currency @package_type.price
+  %dt Spots remaining:
+  %dd= @package_type.remaining
+  %dt Addons allowed:
+  %dd= @package_type.addons_allowed
+  %dt Tickets:
+  %dd= @package_type.tickets
+  %dt Total spots:
+  %dd= @package_type.total_spots
 
 %a.btn.btn-default{href: edit_package_type_path(@package_type)} Edit
-
 
 %h2 Allocated spots
 

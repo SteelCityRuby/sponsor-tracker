@@ -1,11 +1,11 @@
-%p
-  %b Invoice:
-  = link_to @invoice_addon_line_item.invoice.name, @invoice_addon_line_item.invoice
-%p
-  %b Package addon type:
-  = link_to @invoice_addon_line_item.package_addon_type.name, @invoice_addon_line_item.package_addon_type
-%p
-  %b Quantity:
-  = @invoice_addon_line_item.quantity
+%h1.page-header Invoice addon line item
+
+%dl.dl-horizontal
+  %dt Invoice:
+  %dd= link_to @invoice_addon_line_item.invoice.name, @invoice_addon_line_item.invoice
+  %dt Package addon type:
+  %dd= link_to @invoice_addon_line_item.package_addon_type.name, @invoice_addon_line_item.package_addon_type
+  %dt Quantity:
+  %dd= @invoice_addon_line_item.quantity
 
 %a.btn.btn-default{href: edit_invoice_addon_line_item_path(@invoice_addon_line_item)} Edit

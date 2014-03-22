@@ -1,20 +1,18 @@
-%p
-  %b Name:
-  = @sponsor.name
-%p
-  %b State:
-  = @sponsor.state
-%p
-  %b Address:
-  = @sponsor.address
-%p
-  %b Note:
-  = @sponsor.note
+%h1.page-header Sponsor: #{@sponsor.name}
 
--if @sponsor.invoice
-  %p
-    %b Invoice:
-    = link_to @sponsor.invoice.name, @sponsor.invoice
-- else
-  %a.btn.btn-primary{href: new_invoice_url(sponsor_id: @sponsor.id)} Create Invoice
+- unless @sponsor.invoice
+  %a.btn.btn-primary.pull-right{href: new_invoice_url(sponsor_id: @sponsor.id)} Create Invoice
+
+%dl.dl-horizontal
+  %dt State:
+  %dd= @sponsor.state
+  %dt Address:
+  %dd= @sponsor.address
+  %dt Note:
+  %dd= @sponsor.note
+
+  -if @sponsor.invoice
+    %dt Invoice:
+    %dd= link_to @sponsor.invoice.name, @sponsor.invoice
+
 %a.btn.btn-default{href: edit_sponsor_path(@sponsor)} Edit
