@@ -1,22 +1,24 @@
 %h1 Listing package_types
 
 %table.table.table-striped
-  %tr
-    %th Name
-    %th Price
-    %th Spots Remaining
-    %th Addons allowed
-    %th Tickets
-    %th Total spots
-
-  - @package_types.each do |package_type|
+  %thead
     %tr
-      %td= link_to package_type.name, package_type
-      %td= number_to_currency package_type.price
-      %td= package_type.remaining
-      %td= package_type.addons_allowed
-      %td= package_type.tickets
-      %td= package_type.total_spots
+      %th Name
+      %th Price
+      %th Spots Remaining
+      %th Addons allowed
+      %th Tickets
+      %th Total spots
+
+  %tbody
+    - @package_types.each do |package_type|
+      %tr
+        %td= link_to package_type.name, package_type
+        %td= number_to_currency package_type.price
+        %td= package_type.remaining
+        %td= package_type.addons_allowed
+        %td= package_type.tickets
+        %td= package_type.total_spots
 
 %br
 

@@ -1,18 +1,20 @@
 %h1 Listing package_addon_types
 
 %table.table.table-striped
-  %tr
-    %th Name
-    %th Price
-    %th Quantity remaining
-    %th Total spots
-
-  - @package_addon_types.each do |package_addon_type|
+  %thead
     %tr
-      %td= link_to package_addon_type.name, package_addon_type
-      %td= number_to_currency package_addon_type.price
-      %td= package_addon_type.remaining
-      %td= package_addon_type.total_spots
+      %th Name
+      %th Price
+      %th Quantity remaining
+      %th Total spots
+
+  %tbody
+    - @package_addon_types.each do |package_addon_type|
+      %tr
+        %td= link_to package_addon_type.name, package_addon_type
+        %td= number_to_currency package_addon_type.price
+        %td= package_addon_type.remaining
+        %td= package_addon_type.total_spots
 
 %br
 

@@ -1,21 +1,23 @@
 %h1 Listing invoice_addon_line_items
 
 %table.table.table-striped
-  %tr
-    %th Invoice
-    %th Package addon type
-    %th Quantity
-    %th
-    %th
-    %th
-
-  - @invoice_addon_line_items.each do |invoice_addon_line_item|
+  %thead
     %tr
-      %td= invoice_addon_line_item.invoice.name
-      %td= invoice_addon_line_item.package_addon_type.name
-      %td= invoice_addon_line_item.quantity
-      %td= link_to 'Show', invoice_addon_line_item
-      %td= link_to 'Edit', edit_invoice_addon_line_item_path(invoice_addon_line_item)
-      %td= link_to 'Destroy', invoice_addon_line_item, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %th Invoice
+      %th Package addon type
+      %th Quantity
+      %th
+      %th
+      %th
+
+  %tbody
+    - @invoice_addon_line_items.each do |invoice_addon_line_item|
+      %tr
+        %td= invoice_addon_line_item.invoice.name
+        %td= invoice_addon_line_item.package_addon_type.name
+        %td= invoice_addon_line_item.quantity
+        %td= link_to 'Show', invoice_addon_line_item
+        %td= link_to 'Edit', edit_invoice_addon_line_item_path(invoice_addon_line_item)
+        %td= link_to 'Destroy', invoice_addon_line_item, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br

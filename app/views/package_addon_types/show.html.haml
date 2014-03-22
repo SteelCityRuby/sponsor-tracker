@@ -13,10 +13,12 @@
 %h2 Allocated spots
 
 %table.table.table-striped
-  %tr
-    %th Invoice
-    %th Qty
-  - @package_addon_type.invoice_addon_line_items.each do |line_item|
+  %thead
     %tr
-      %td= link_to line_item.invoice.name, line_item.invoice
-      %td= line_item.quantity
+      %th Invoice
+      %th Qty
+  %tbody
+    - @package_addon_type.invoice_addon_line_items.each do |line_item|
+      %tr
+        %td= link_to line_item.invoice.name, line_item.invoice
+        %td= line_item.quantity

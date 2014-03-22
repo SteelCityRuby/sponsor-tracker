@@ -1,20 +1,22 @@
 %h1 Listing invoices
 
 %table.table.table-striped
-  %tr
-    %th Name
-    %th Sponsor
-    %th Package type
-    %th Total
-    %th Balance
-
-  - @invoices.each do |invoice|
+  %thead
     %tr
-      %td= link_to invoice.name, invoice
-      %td= link_to invoice.sponsor.name, invoice.sponsor
-      %td= link_to invoice.package_type.name, invoice.package_type
-      %td= number_to_currency invoice.total
-      %td= number_to_currency invoice.balance
+      %th Name
+      %th Sponsor
+      %th Package type
+      %th Total
+      %th Balance
+
+  %tbody
+    - @invoices.each do |invoice|
+      %tr
+        %td= link_to invoice.name, invoice
+        %td= link_to invoice.sponsor.name, invoice.sponsor
+        %td= link_to invoice.package_type.name, invoice.package_type
+        %td= number_to_currency invoice.total
+        %td= number_to_currency invoice.balance
 
 %br
 

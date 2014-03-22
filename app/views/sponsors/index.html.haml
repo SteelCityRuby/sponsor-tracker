@@ -1,20 +1,22 @@
 %h1 Listing sponsors
 
 %table.table.table-striped
-  %tr
-    %th Name
-    %th Invoice
-    %th Balance
-
-  - @sponsors.each do |sponsor|
+  %thead
     %tr
-      %td= link_to sponsor.name, sponsor
-      %td
-        -if invoice = sponsor.invoice
-          = link_to number_to_currency(invoice.total), invoice
-        -else
-          = link_to 'Create Invoice', new_invoice_url(sponsor_id: sponsor.id)
-      %td= number_to_currency sponsor.balance
+      %th Name
+      %th Invoice
+      %th Balance
+
+  %tbody
+    - @sponsors.each do |sponsor|
+      %tr
+        %td= link_to sponsor.name, sponsor
+        %td
+          -if invoice = sponsor.invoice
+            = link_to number_to_currency(invoice.total), invoice
+          -else
+            = link_to 'Create Invoice', new_invoice_url(sponsor_id: sponsor.id)
+        %td= number_to_currency sponsor.balance
 
 %br
 

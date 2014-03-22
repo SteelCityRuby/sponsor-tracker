@@ -17,8 +17,10 @@
 %h2 Allocated spots
 
 %table.table.table-striped
-  %tr
-    %th Sponsor
-  - @package_type.invoices.each do |invoice|
+  %thead
     %tr
-      %td= link_to invoice.sponsor.name, invoice.sponsor
+      %th Sponsor
+  %tbody
+    - @package_type.invoices.each do |invoice|
+      %tr
+        %td= link_to invoice.sponsor.name, invoice.sponsor
