@@ -14,5 +14,6 @@
   - else
     %p You are not logged in
 
-%h2 Models
-%img{src: '/models.png'}
+-if browserid_authenticated?
+  %h2 Models
+  %img{src: '/models.png'}
