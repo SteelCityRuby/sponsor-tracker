@@ -1,5 +1,3 @@
-%h1.page-header Sponsor: #{@sponsor.name}
-
 - unless @sponsor.invoice
   %a.btn.btn-primary.pull-right{href: new_invoice_url(sponsor_id: @sponsor.id)}
     %span.glyphicon.glyphicon-file
@@ -9,6 +7,8 @@
   %a.btn.btn-primary.pull-right{href: new_payment_url(invoice_id: @sponsor.invoice.id)}
     %span.glyphicon.glyphicon-file
     Add Payment
+
+%h1.page-header Sponsor: #{@sponsor.name}
 
 %dl.dl-horizontal
   %dt Balance:
