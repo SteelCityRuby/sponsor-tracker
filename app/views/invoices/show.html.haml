@@ -31,7 +31,7 @@
       - @invoice.invoice_addon_line_items.each do |line_item|
         %tr
           %td= line_item.package_addon_type.name
-          %td= line_item.package_addon_type.price
+          %td= number_to_currency line_item.package_addon_type.price
           %td= line_item.quantity
           %td= number_to_currency line_item.price
           %td= link_to 'Edit', edit_invoice_addon_line_item_url(line_item)

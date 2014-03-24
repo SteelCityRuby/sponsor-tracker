@@ -12,7 +12,7 @@
 
 %dl.dl-horizontal
   %dt Balance:
-  %dd= @sponsor.balance
+  %dd= number_to_currency @sponsor.balance
   %dt Address:
   %dd= simple_format @sponsor.address, {}, wrapper_tag: 'div'
   %dt Note:
