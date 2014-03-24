@@ -16,4 +16,7 @@
 
 -if browserid_authenticated?
   %h2 Models
+  %p
+    An important thing to note about the data model is that the invoice to sponsor relationship is one-to-one.
+    All other relationships are many-to-one.
   %img{src: '/models.png'}
