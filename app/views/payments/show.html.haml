@@ -7,6 +7,8 @@
   %dd= @payment.payment_type.name
   %dt Ammount:
   %dd= number_to_currency @payment.ammount
+  %dt Notes:
+  %dd= simple_format @payment.notes, {}, wrapper_tag: 'div'
   %dt Created by:
   %dd= @payment.created_by.email
 

@@ -6,6 +6,7 @@
       %th Invoice
       %th Payment type
       %th Ammount
+      %th Notes
       %th
       %th
 
@@ -15,6 +16,7 @@
         %td= link_to payment.invoice.name, payment.invoice
         %td= payment.payment_type.name
         %td= number_to_currency payment.ammount
+        %td= truncate payment.notes, length: 20
         %td= link_to 'Show', payment
         %td= link_to 'Edit', edit_payment_path(payment)
 
