@@ -1,0 +1,25 @@
+default: &default
+  site_brand: Sponsor Tracker
+  conference_name: Ruby Conference <%= Time.now.year %>
+  payment_address: |
+    Company Name
+    c/o Treasurer
+    Addr Line 1
+    Addr Line 2
+  payment_payable_to: "..., LLC"
+  payment_memo: Conference Sponsorship
+  invoice_prefix: <%= Time.now.year %>
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+production:
+  site_brand: <%= ENV["SPONSOR_TRACKER_SITE_BRAND"] %>
+  conference_name: <%= ENV["SPONSOR_TRACKER_CONFERENCE_NAME"] %>
+  payment_address: <%= ENV["SPONSOR_TRACKER_PAYMENT_ADDRESS"] %>
+  payment_payage_to: <%= ENV["SPONSOR_TRACKER_PAYMENT_PAYABLE_TO"] %>
+  payment_memo: <%= ENV["SPONSOR_TRACKER_PAYMENT_MEMO"] %>
+  invoice_prefix: <%= ENV["SPONSOR_TRACKER_INVOICE_PREFIX"] %>

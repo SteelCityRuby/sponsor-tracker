@@ -1,6 +1,6 @@
 %header
   %h1 Invoice
-  %h2 Steel City Ruby Conference 2014 Sponsorship
+  %h2 #{Rails.application.local_settings[:conference_name]} Sponsorship
 %article
   %address
     = @invoice.sponsor.name
@@ -51,15 +51,11 @@
 %aside
   %h1 Please remit payment to
   .info
-    %address
-      %p Steel City Ruby Conference
-      %p Attn: ..., Treasurer
-      %p Address line 1
-      %p Address line 2
+    %address= simple_format Rails.application.local_settings[:payment_address]
     %br
     %p
       Make checks payable to
-      %strong Steel City Ruby Conference, LLC
-      and include
-      %strong SCRC14
+      %strong= Rails.application.local_settings[:payment_payable_to]
+      and please include
+      %strong= Rails.application.local_settings[:payment_memo]
       in the memo

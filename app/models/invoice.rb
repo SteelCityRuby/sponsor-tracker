@@ -16,7 +16,7 @@ class Invoice < ActiveRecord::Base
   end
 
   def name
-    "2014-SCRC-#{id}"
+    "#{Rails.application.local_settings[:invoice_prefix]}-#{id}"
   end
 
   def balance

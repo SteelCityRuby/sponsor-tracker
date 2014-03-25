@@ -5,7 +5,7 @@
     %span.icon-bar
     %span.icon-bar
   = link_to root_path, :class => 'navbar-brand' do
-    = "Sponsor Tracker"
+    = Rails.application.local_settings[:site_brand]
 #navbar-collapse-root.collapse.navbar-collapse
   %ul.nav.navbar-nav
     - if browserid_authenticated?
