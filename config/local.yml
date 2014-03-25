@@ -20,6 +20,6 @@ production:
   site_brand: <%= ENV["SPONSOR_TRACKER_SITE_BRAND"] %>
   conference_name: <%= ENV["SPONSOR_TRACKER_CONFERENCE_NAME"] %>
   payment_address: <%= ENV["SPONSOR_TRACKER_PAYMENT_ADDRESS"] %>
-  payment_payage_to: <%= ENV["SPONSOR_TRACKER_PAYMENT_PAYABLE_TO"] %>
+  payment_payable_to: <%= ENV["SPONSOR_TRACKER_PAYMENT_PAYABLE_TO"] %>
   payment_memo: <%= ENV["SPONSOR_TRACKER_PAYMENT_MEMO"] %>
   invoice_prefix: <%= ENV["SPONSOR_TRACKER_INVOICE_PREFIX"] %>
