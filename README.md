@@ -30,3 +30,7 @@ Customize the following variables to fit your application.  Note that complex es
 ## Models
 
 ![Graphviz diagram of models](public/models.png)
+
+## License
+
+This software is distributed under the [MIT License](LICENSE)
