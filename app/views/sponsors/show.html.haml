@@ -14,9 +14,9 @@
   %dt Balance:
   %dd= number_to_currency @sponsor.balance
   %dt Address:
-  %dd= simple_format @sponsor.address, {}, wrapper_tag: 'div'
+  %dd= simple_format h(@sponsor.address), {}, wrapper_tag: 'div'
   %dt Note:
-  %dd= simple_format @sponsor.note, {}, wrapper_tag: 'div'
+  %dd= simple_format h(@sponsor.note), {}, wrapper_tag: 'div'
 
   -if @sponsor.invoice
     %dt Invoice:
