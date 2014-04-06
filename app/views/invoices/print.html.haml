@@ -43,10 +43,10 @@
       %td= number_to_currency @invoice.total
     %tr
       %th Amount Paid
-      %td $0.00
+      %td= number_to_currency @invoice.total_payments
     %tr
       %th Balance Due
-      %td= number_to_currency @invoice.total
+      %td= number_to_currency @invoice.balance
 
 %aside
   %h1 Please remit payment to

@@ -19,7 +19,11 @@ class Invoice < ActiveRecord::Base
     "#{Rails.application.local_settings[:invoice_prefix]}-#{id}"
   end
 
+  def total_payments
+    payments.sum :ammount
+  end
+
   def balance
-    total - payments.sum(:ammount)
+    total - total_payments
   end
 end
