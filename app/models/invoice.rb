@@ -20,7 +20,7 @@ class Invoice < ActiveRecord::Base
   end
 
   def total_payments
-    payments.sum :ammount
+    payments.sum :amount
   end
 
   def balance

@@ -5,8 +5,8 @@
   %dd= link_to @payment.invoice.name, @payment.invoice
   %dt Payment type:
   %dd= @payment.payment_type.name
-  %dt Ammount:
-  %dd= number_to_currency @payment.ammount
+  %dt Amount:
+  %dd= number_to_currency @payment.amount
   %dt Notes:
   %dd= simple_format h(@payment.notes), {}, wrapper_tag: 'div'
   %dt Created by:

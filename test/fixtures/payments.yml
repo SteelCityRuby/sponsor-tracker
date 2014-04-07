@@ -3,11 +3,11 @@
 one:
   invoice_id: 
   payment_type_id: 
-  ammount: 1
+  amount: 1
   created_by_id: 
 
 two:
   invoice_id: 
   payment_type_id: 
-  ammount: 1
+  amount: 1
   created_by_id: 
