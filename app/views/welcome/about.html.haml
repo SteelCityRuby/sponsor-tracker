@@ -1,0 +1,28 @@
+%h1.page-header About
+
+%h2 User
+%p You are currently logged in via Persona as: #{browserid_email}
+- if browserid_authenticated?
+  %p Your user account is active
+- else
+  - if browserid_email
+    %p Your email address is not active
+    %p Contact the site owner for access
+  - else
+    %p You are not logged in
+
+%h2 Site Info
+%dl.dl-horizontal
+  %dt Revision:
+  %dd
+    = link_to SponsorTracker::ShortRevision, "https://github.com/SteelCityRuby/sponsor-tracker/commit/#{SponsorTracker::Revision}"
+  %dt Rails:
+  %dd= Rails.version
+  %dt #{@db_adapter} Version:
+  %dd= @db_server_version
+
+%h2 Models
+%p
+  An important thing to note about the data model is that the invoice to sponsor relationship is one-to-one.
+  All other relationships are many-to-one.
+%img{src: '/models.png'}
