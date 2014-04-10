@@ -7,7 +7,8 @@ class ApplicationController < ActionController::Base
 
   def ensure_authenticated
     return if browserid_authenticated?
-    return if params[:controller] == 'welcome' || params[:controller] == 'sessions'
+    return if params[:controller] == 'sessions'
+    return if params[:controller] == 'welcome' && params[:action] == 'index'
     redirect_to root_url
   end
 end
