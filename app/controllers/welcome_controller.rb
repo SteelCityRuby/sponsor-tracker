@@ -1,5 +1,8 @@
 class WelcomeController < ApplicationController
   def index
+    @total_invoiced = Invoice.all.map{|i| i.total}.sum
+    @total_payments_received = Payment.sum :amount
+    @total_invoices_unpaid = @total_invoiced - @total_payments_received
   end
 
   def about

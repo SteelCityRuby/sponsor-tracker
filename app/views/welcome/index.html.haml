@@ -1,1 +1,12 @@
-%h1 Welcome
+%h1.page-header Welcome
+
+.panel.panel-info
+  %h2.panel-heading.panel-title Overview
+  %dl.list-group.dl-horizontal
+    .list-group-item
+      %dt Payments Received:
+      %dd= link_to number_to_currency(@total_payments_received), payments_url
+      %dt Invoices Unpaid:
+      %dd= number_to_currency @total_invoices_unpaid
+      %dt Total Invoiced:
+      %dd= number_to_currency @total_invoiced
