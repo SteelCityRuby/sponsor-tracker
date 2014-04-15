@@ -4,7 +4,7 @@ class WelcomeController < ApplicationController
     @total_payments_received = Payment.sum :amount
     @total_invoices_unpaid = @total_invoiced - @total_payments_received
 
-    @payments_by_sponsor = Payment.select('*, sum(amount) as total').group('invoice_id')
+    @payments_by_sponsor = Payment.select('*, sum(amount) as total').group('invoice_id, id')
   end
 
   def about
