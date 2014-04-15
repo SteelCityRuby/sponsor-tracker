@@ -3,6 +3,8 @@ class WelcomeController < ApplicationController
     @total_invoiced = Invoice.all.map{|i| i.total}.sum
     @total_payments_received = Payment.sum :amount
     @total_invoices_unpaid = @total_invoiced - @total_payments_received
+
+    @payments_by_sponsor = Payment.select('*, sum(amount) as total').group('invoice_id')
   end
 
   def about

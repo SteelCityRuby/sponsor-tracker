@@ -11,3 +11,18 @@
         %dd= number_to_currency @total_invoices_unpaid
         %dt Total Invoiced:
         %dd= number_to_currency @total_invoiced
+
+  .panel.panel-primary
+    %h2.panel-heading.panel-title Payments
+    .panel-body
+      A list of all the sponsors who have paid and their total.
+    %table.table.table-striped
+      %thead
+        %tr
+          %th Sponsor
+          %th Payment
+      %tbody
+        - @payments_by_sponsor.each do |payment|
+          %tr
+            %td= link_to payment.sponsor.name, payment.sponsor
+            %td= number_to_currency payment.total
