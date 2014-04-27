@@ -10,6 +10,7 @@ group :development do
   gem 'binding_of_caller'
 
   gem 'railroady'
+  gem 'quiet_assets'
 end
 
 group :production do
