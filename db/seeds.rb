@@ -8,3 +8,4 @@
 
 PaymentType.create name: "Check"
 PaymentType.create name: "Stripe"
+PaymentType.create name: "Cryptocurrency"
