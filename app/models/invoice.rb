@@ -7,6 +7,8 @@ class Invoice < ActiveRecord::Base
   validates :package_type, presence: true
   validates :sponsor, presence: true, uniqueness: true
 
+  default_scope { includes(:payments, :package_type, :sponsor, invoice_addon_line_items: [:package_addon_type]) }
+
   def total
     package_type.price + (invoice_addon_line_items.map &:price).sum
   end

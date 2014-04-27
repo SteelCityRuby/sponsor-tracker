@@ -7,7 +7,7 @@ class SponsorsController < ApplicationController
     if params[:state]
       @sponsors = Sponsor.where state: params[:state]
     else
-      @sponsors = Sponsor.all
+      @sponsors = Sponsor.includes(:invoice).all
     end
   end
 
