@@ -12,6 +12,21 @@
         %dt Total Invoiced:
         %dd= number_to_currency @total_invoiced
 
+  .panel.panel-danger
+    %h2.panel-heading.panel-title Open Invoices
+    .panel-body
+      Sponsors with an open invoice and their remaining balance.
+    %table.table.table-striped
+      %thead
+        %tr
+          %th Sponsor
+          %th Balance
+      %tbody
+        - @open_invoices.each do |invoice|
+          %tr
+            %td= link_to invoice.sponsor.name, invoice.sponsor
+            %td= number_to_currency invoice.balance
+
   .panel.panel-primary
     %h2.panel-heading.panel-title Payments
     .panel-body

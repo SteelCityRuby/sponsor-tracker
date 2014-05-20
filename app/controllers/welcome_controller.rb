@@ -1,10 +1,12 @@
 class WelcomeController < ApplicationController
   def index
-    @total_invoiced = Invoice.all.map{|i| i.total}.sum
+    @invoices = Invoice.all.to_a
+    @total_invoiced = @invoices.map {|i| i.total}.sum
     @total_payments_received = Payment.sum :amount
     @total_invoices_unpaid = @total_invoiced - @total_payments_received
 
     @payments_by_sponsor = Payment.select('*, sum(amount) as total').group('invoice_id, id').includes(:invoice)
+    @open_invoices = @invoices.select {|i| i.balance > 0}
   end
 
   def about
