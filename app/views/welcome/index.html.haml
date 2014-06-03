@@ -21,11 +21,16 @@
         %tr
           %th Sponsor
           %th Balance
+          %th Created
       %tbody
         - @open_invoices.each do |invoice|
           %tr
             %td= link_to invoice.sponsor.name, invoice.sponsor
             %td= number_to_currency invoice.balance
+            %td
+              = time_tag invoice.created_at do
+                #{time_ago_in_words invoice.created_at} ago
+              
 
   .panel.panel-primary
     %h2.panel-heading.panel-title Payments
