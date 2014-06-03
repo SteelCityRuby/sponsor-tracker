@@ -5,7 +5,7 @@ class WelcomeController < ApplicationController
     @total_payments_received = Payment.sum :amount
     @total_invoices_unpaid = @total_invoiced - @total_payments_received
 
-    @payments_by_sponsor = Payment.select('*, sum(amount) as total').group('invoice_id, id').includes(:invoice)
+    @payments = Payment.includes(invoice: :sponsor).order(created_at: :desc)
     @open_invoices = @invoices.select {|i| i.balance > 0}
   end
 

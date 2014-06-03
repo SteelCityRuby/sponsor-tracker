@@ -36,8 +36,10 @@
         %tr
           %th Sponsor
           %th Payment
+          %th Date
       %tbody
-        - @payments_by_sponsor.each do |payment|
+        - @payments.each do |payment|
           %tr
             %td= link_to payment.sponsor.name, payment.sponsor
-            %td= number_to_currency payment.total
+            %td= number_to_currency payment.amount
+            %td= time_tag payment.created_at
