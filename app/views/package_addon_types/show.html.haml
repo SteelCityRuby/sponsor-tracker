@@ -15,10 +15,10 @@
 %table.table.table-striped
   %thead
     %tr
-      %th Invoice
+      %th Sponsor
       %th Qty
   %tbody
     - @package_addon_type.invoice_addon_line_items.each do |line_item|
       %tr
-        %td= link_to line_item.invoice.name, line_item.invoice
+        %td= link_to line_item.invoice.sponsor.name, line_item.invoice.sponsor
         %td= line_item.quantity
