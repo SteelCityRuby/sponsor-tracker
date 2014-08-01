@@ -1,3 +1,6 @@
+%p.pull-right
+  %a.btn.btn-default{href: edit_payment_path(@payment)} Edit
+
 = page_header "Payment: #{@payment.invoice.sponsor.name} (#{@payment.invoice.name})"
 
 %dl.dl-horizontal
@@ -11,5 +14,3 @@
   %dd= simple_format h(@payment.notes), {}, wrapper_tag: 'div'
   %dt Created by:
   %dd= @payment.created_by.email
-
-%a.btn.btn-default{href: edit_payment_path(@payment)} Edit

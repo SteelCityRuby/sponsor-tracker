@@ -1,3 +1,9 @@
+%p.pull-right
+  %a.btn.btn-primary{href: new_payment_path}
+    %span.glyphicon.glyphicon-plus
+    New Payment
+
+
 = page_header 'Listing payments'
 
 %table.table.table-striped
@@ -19,9 +25,3 @@
         %td= truncate payment.notes, length: 20
         %td= link_to 'Show', payment
         %td= link_to 'Edit', edit_payment_path(payment)
-
-%br
-
-%a.btn.btn-primary{href: new_payment_path}
-  %span.glyphicon.glyphicon-plus
-  New Payment

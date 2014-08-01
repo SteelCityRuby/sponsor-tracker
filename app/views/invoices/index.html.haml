@@ -1,3 +1,8 @@
+%p.pull-right
+  %a.btn.btn-primary{href: new_invoice_path}
+    %span.glyphicon.glyphicon-plus
+    New Invoice
+
 = page_header 'Listing invoices'
 
 %table.table.table-striped
@@ -17,9 +22,3 @@
         %td= link_to invoice.package_type.name, invoice.package_type
         %td= number_to_currency invoice.total
         %td= number_to_currency invoice.balance
-
-%br
-
-%a.btn.btn-primary{href: new_invoice_path}
-  %span.glyphicon.glyphicon-plus
-  New Invoice

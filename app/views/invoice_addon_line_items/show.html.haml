@@ -1,3 +1,6 @@
+%p.pull-right
+  %a.btn.btn-default{href: edit_invoice_addon_line_item_path(@invoice_addon_line_item)} Edit
+
 = page_header 'Invoice addon line item'
 
 %dl.dl-horizontal
@@ -7,5 +10,3 @@
   %dd= link_to @invoice_addon_line_item.package_addon_type.name, @invoice_addon_line_item.package_addon_type
   %dt Quantity:
   %dd= @invoice_addon_line_item.quantity
-
-%a.btn.btn-default{href: edit_invoice_addon_line_item_path(@invoice_addon_line_item)} Edit

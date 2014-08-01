@@ -1,3 +1,9 @@
+%p.pull-right
+  %a.btn.btn-primary{href: new_package_addon_type_path}
+    %span.glyphicon.glyphicon-plus
+    New Package addon type
+
+
 = page_header 'Listing package_addon_types'
 
 %table.table.table-striped
@@ -15,9 +21,3 @@
         %td= number_to_currency package_addon_type.price
         %td= package_addon_type.remaining
         %td= package_addon_type.total_spots
-
-%br
-
-%a.btn.btn-primary{href: new_package_addon_type_path}
-  %span.glyphicon.glyphicon-plus
-  New Package addon type

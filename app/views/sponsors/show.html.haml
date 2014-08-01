@@ -1,12 +1,15 @@
-- unless @sponsor.invoice
-  %a.btn.btn-primary.pull-right{href: new_invoice_url(sponsor_id: @sponsor.id)}
-    %span.glyphicon.glyphicon-file
-    Create Invoice
+%p.pull-right
+  - unless @sponsor.invoice
+    %a.btn.btn-primary{href: new_invoice_url(sponsor_id: @sponsor.id)}
+      %span.glyphicon.glyphicon-file
+      Create Invoice
 
--if @sponsor.invoice && @sponsor.invoice.balance > 0
-  %a.btn.btn-primary.pull-right{href: new_payment_url(invoice_id: @sponsor.invoice.id)}
-    %span.glyphicon.glyphicon-file
-    Add Payment
+  -if @sponsor.invoice && @sponsor.invoice.balance > 0
+    %a.btn.btn-primary{href: new_payment_url(invoice_id: @sponsor.invoice.id)}
+      %span.glyphicon.glyphicon-file
+      Add Payment
+
+  %a.btn.btn-default{href: edit_sponsor_path(@sponsor)} Edit
 
 = page_header "Sponsor: #{@sponsor.name}"
 
@@ -21,5 +24,3 @@
   -if @sponsor.invoice
     %dt Invoice:
     %dd= link_to @sponsor.invoice.name, @sponsor.invoice
-
-%a.btn.btn-default{href: edit_sponsor_path(@sponsor)} Edit

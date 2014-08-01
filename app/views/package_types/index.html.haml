@@ -1,3 +1,8 @@
+%p.pull-right
+  %a.btn.btn-primary{href: new_package_type_path}
+    %span.glyphicon.glyphicon-plus
+    New Package type
+
 = page_header 'Listing package_types'
 
 %table.table.table-striped
@@ -19,9 +24,3 @@
         %td= package_type.addons_allowed
         %td= package_type.tickets
         %td= package_type.total_spots
-
-%br
-
-%a.btn.btn-primary{href: new_package_type_path}
-  %span.glyphicon.glyphicon-plus
-  New Package type

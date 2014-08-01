@@ -1,3 +1,8 @@
+%p.pull-right
+  %a.btn.btn-primary{href: new_sponsor_path}
+    %span.glyphicon.glyphicon-plus
+    New Sponsor
+
 = page_header 'Listing sponsors'
 
 %table.table.table-striped
@@ -19,9 +24,3 @@
             = link_to 'Create Invoice', new_invoice_url(sponsor_id: sponsor.id)
         %td= number_to_currency sponsor.balance
         %td= simple_format h(sponsor.note), {}, wrapper_tag: 'div', sanitize: false
-
-%br
-
-%a.btn.btn-primary{href: new_sponsor_path}
-  %span.glyphicon.glyphicon-plus
-  New Sponsor
