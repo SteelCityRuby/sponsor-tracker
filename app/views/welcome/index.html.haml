@@ -1,9 +1,10 @@
-%p.pull-right
-  %a.btn.btn-primary{href: new_sponsor_path}
-    %span.glyphicon.glyphicon-plus
-    New Sponsor
-
 -if browserid_authenticated?
+
+  %p.pull-right
+    %a.btn.btn-primary{href: new_sponsor_path}
+      %span.glyphicon.glyphicon-plus
+      New Sponsor
+
   = page_header 'Welcome'
 
   .panel.panel-info
